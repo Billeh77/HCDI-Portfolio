@@ -83,5 +83,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "process-video",
     title: "Viberations Video",
     file: "new video.mp4",
+    description:
+      "Local: keeps working with the file in public/portfolio/video/. On Vercel: set NEXT_PUBLIC_PORTFOLIO_VIDEO_URL to a direct .mp4 link, or compress the video under ~95MB and remove it from .gitignore so it can be committed.",
   },
 ];

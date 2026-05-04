@@ -36,11 +36,8 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Large video binaries (GitHub rejects files > 100MB; pushes also time out on huge packs).
-# Keep your .mp4 on disk for local dev; on Vercel set NEXT_PUBLIC_PORTFOLIO_VIDEO_URL to a direct HTTPS link.
-/public/portfolio/video/*.mp4
-/public/portfolio/video/*.mov
-/public/portfolio/video/*.webm
+# Original export (~300MB); GitHub limit is 100MB per file. Compressed reel is tracked instead.
+/public/portfolio/video/new video.mp4
 
 # typescript
 *.tsbuildinfo

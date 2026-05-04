@@ -3,10 +3,7 @@
  *
  * Files on disk:
  *   PDFs:   web/public/portfolio/pdfs/
- *   Video:  web/public/portfolio/video/ (keep each file under ~95MB for GitHub, or use env URL below)
- *
- * For a large video: set NEXT_PUBLIC_PORTFOLIO_VIDEO_URL in Vercel (Project → Settings → Environment Variables)
- * to a direct HTTPS URL to your .mp4 (e.g. Cloudinary, Mux, S3, or a compressed file on a CDN).
+ *   Video:  web/public/portfolio/video/ (commit files under ~95MB; optional NEXT_PUBLIC_PORTFOLIO_VIDEO_URL overrides)
  *
  * Use the exact file name (including spaces). Special characters in names are fine;
  * URLs are encoded automatically.
@@ -25,7 +22,7 @@ export type PortfolioVideo = {
   kind: "video";
   id: string;
   title: string;
-  /** File name inside public/portfolio/video/ (small files only; ignored by git if over GitHub limits) */
+  /** File name inside public/portfolio/video/ (under ~95MB for GitHub) */
   file?: string;
   /** Direct video URL (optional; overrides env and `file` when set) */
   url?: string;
@@ -82,8 +79,6 @@ export const portfolioItems: PortfolioItem[] = [
     kind: "video",
     id: "process-video",
     title: "Viberations Video",
-    file: "new video.mp4",
-    description:
-      "Local: keeps working with the file in public/portfolio/video/. On Vercel: set NEXT_PUBLIC_PORTFOLIO_VIDEO_URL to a direct .mp4 link, or compress the video under ~95MB and remove it from .gitignore so it can be committed.",
+    file: "new-video-720p-crf28.mp4",
   },
 ];
